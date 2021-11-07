@@ -1,5 +1,7 @@
 package ru.otus.java;
 
+import ru.otus.java.enums.Questions;
+
 import java.io.IOException;
 
 /**
@@ -25,9 +27,23 @@ import java.io.IOException;
 public class Main {
 
      public static void main(String[] args) throws IOException {
-        RunTest runTest = new RunTest();
-        int score = runTest.runTest();
-        EvaluationResult result = new EvaluationResult();
-        result.printResult(score);
+
+         System.out.println("Привет! Давайте начнем тест."+"\n");
+         System.out.println("Вам будут заданы 3 вопроса и для каждого нужно выбрать один правильный вариант ответа. " +
+                 "Для ответа нажмите на клавиатуре цифру, соответствующую верному ответу и нажмите Enter."+
+                 "Максимальный балл - 3.");
+
+
+        int score=0;
+        Question   question = new Question();
+        Answer answer = new Answer();
+        EvaluationResult result=new EvaluationResult();
+
+         for (Questions questions : Questions.values()) {
+             question.askNextQuestion(questions);
+             score = score + answer.readAndCheckAnswer(questions);
+         }
+
+         result.printResult(score);
     }
 }

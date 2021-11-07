@@ -7,7 +7,7 @@ public enum Questions {
             return "В каком году принята декларация независимости США?";
         }
         @Override
-        public String print() {
+        public String printVariants() {
             return " 1. 1770\n 2. 1776\n 3. 1821\n 4. 1994";
         }
         @Override
@@ -24,7 +24,7 @@ public enum Questions {
             return "Единица измерения силы тока - это:";
         }
         @Override
-        public String print() {
+        public String printVariants() {
             return " 1. Ампер\n 2. Ватт\n 3. Вольт\n 4. Паскаль\n 5. Килобит";
         }
         @Override
@@ -40,7 +40,7 @@ public enum Questions {
             return "Что такое агорафобия?";
         }
         @Override
-        public String print() {
+        public String printVariants() {
             return " 1. Боязнь высоты\n 2. Боязнь замкнутых пространств\n 3. Боязнь открытых пространств";
         }
         @Override
@@ -50,7 +50,7 @@ public enum Questions {
     };
 
     public abstract String question();
-    public abstract String print();
+    public abstract String printVariants();
     public abstract String check();
 }
 
